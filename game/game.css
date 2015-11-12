@@ -1,6 +1,5 @@
 body {
   background: lavender;
-
 }
 .status-bar {
   flex-direction: row;
@@ -22,6 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .hidden {
   display: none;
