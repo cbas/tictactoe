@@ -15,7 +15,7 @@ body {
 .tile {
   height: 180px;
   width: 180px;
-  border: 10px solid pink;
+  border: 10px solid purple;
   margin: 2px;
   font-size: 150px;
   display: flex;
