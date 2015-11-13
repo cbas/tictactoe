@@ -1,5 +1,5 @@
 body {
-  background: lavender;
+  background: deepskyblue;
 }
 .status-bar {
   flex-direction: row;
@@ -13,9 +13,10 @@ body {
   align-items: center;
 }
 .tile {
+  color: gold;
   height: 180px;
   width: 180px;
-  border: 10px solid purple;
+  border: 10px solid orange;
   margin: 2px;
   font-size: 150px;
   display: flex;
