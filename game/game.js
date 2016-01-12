@@ -1,3 +1,5 @@
+import findWinner from './lib/findWinner'
+
 // select HTML elements and store them in variables
 var body = document.querySelector('body') // body element to listen for clicks
 var title = document.querySelector('.title') // title bar
@@ -27,7 +29,7 @@ function tictactoe (event) {
   if (tile.textContent) return
   tile.textContent = player ? 'X' : 'O'
   // find winner by checking tiles for 'X' and 'O'
-  winner = findWinner()
+  winner = findWinner(tiles)
   if (winner) {
     title.textContent = winner + ' wins!'
     body.removeEventListener('click', tictactoe)
@@ -40,21 +42,4 @@ function tictactoe (event) {
     player = !player
     title.textContent = player ? 'X\'s turn' : 'O\'s turn'
   }
-}
-
-function findWinner () {
-  // tiles layout by index
-  // [0] [1] [2]
-  // [3] [4] [5]
-  // [6] [7] [8]
-  var winningCombination = [ [0, 1, 2], [3, 4, 5], [6, 7, 8],
-                             [0, 3, 6], [1, 4, 7], [2, 5, 8],
-                             [0, 4, 8], [2, 4, 6]]
-
-  if (winningCombination.some(combo =>
-    combo.map(index => tiles[index])
-      .every(tile => tile.textContent === 'X'))) return 'X'
-  else if (winningCombination.some(combo =>
-    combo.map(index => tiles[index])
-      .every(tile => tile.textContent === 'O'))) return 'O'
 }
